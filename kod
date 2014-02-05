@@ -1,12 +1,14 @@
-\documentclass[10pt,a4paper,oneside]{book}
+\documentclass[11pt,a4paper]{book}
 
 \usepackage{geometry}
-\geometry{tmargin=3cm,bmargin=3cm}
+\geometry{tmargin=3.5cm, bmargin=3.5cm, lmargin=3cm, rmargin=3cm}
 \usepackage[T1]{fontenc}
 \usepackage[OT4]{polski}
 \usepackage[utf8]{inputenc}
-\setlength{\parindent}{10pt}
-\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+%\usepackage{enumerate}
+%\setlength{\parindent}{10pt}
+%\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\usepackage[leqno]{amsmath}
 
 \begin{document}
 
@@ -14,147 +16,104 @@
 \footnotesize{IV. Podstawowe wiadomości o tensorach}
 \end{center}
 
-\linespread{1.9}
 
-\indent
-Możemy zatem każdemu przekształceniu liniowemu w $\mathnormal{R}$ przyporządkować jednoznacz-\\ 
-nie funkcję dwuliniową typu $\gamma$).\\ 
-\indent
+Możemy zatem każdemu przekształceniu liniowemu w $\mathnormal{R}$ przyporządkować jednoznacznie funkcję dwuliniową typu $\gamma$).
+
 Tak jak w $\S$ 11 rozdziału II można wykazać, że jest i odwrotnie, tj. że każdej funkcji
-\\ dwuliniowej typu $\gamma$) odpowiada przekształcenie liniowe w $\mathnormal{R}$.
+dwuliniowej typu $\gamma$) odpowiada przekształcenie liniowe w $\mathnormal{R}$.\\
 
-\linespread{1.6}
+\textbf{2. \footnotesize{Wyrażenie funkcji wieloliniowej w danym układzie współrzędnych. Przejście od jednego układu współrzędnych do drugiego.}} Wyjaśnimy, jak wyraża się funkcja wieloniniowa
+przez współrzędne tych wektorów, od których zależy. Aby nie pisać zbyt długich wzorów,
+przeprowadzimy rozważania w przypadku funkcji wieloliniowej $\mathnormal{l(x,y;f)}$ zależnej od dwóch
+wektorów z $\mathnormal{R}$ i jednego wektora z $\bar{R}$ (funkcja typu (2,1)).\\ 
 
-\indent 
-\textbf{2. \footnotesize{Wyrażenie funkcji wieloliniowej w danym układzie współrzędnych. Przejście od jed-\\
-nego układu współrzędnych do drugiego.}} Wyjaśnimy, jak wyraża się funkcja wieloniniowa\\
-przez współrzędne tych wektorów, od których zależy. Aby nie pisać zbyt długich wzorów,\\
-przeprowadzimy rozważania w przypadku funkcji wieloliniowej $\mathnormal{l(x,y;f)}$ zależnej od dwóch\\
-wektorów z $\mathnormal{R}$ i jednego wektora z $\bar{R}$ (funkcja typu (2,1)).\\
-\indent 
 Wybierzmy w $\mathnormal{R}$ pewną bazę $e_{1},e_{2},\ldots, e_{n}$, a w $\bar{R}$ sprzężoną z nią bazę $f^{1},f^{2},\ldots,f^{n}$.\\
 Niech
-\begin{center}
-$x=\xi^{i}e_{i}$,   $y=\eta^{j}e_{j}$,   $f=\zeta_{k}f^{k}$.
+\begin{center}$x=\xi^{i}e_{i}$,\hspace{1cm}$y=\eta^{j}e_{j}$,\hspace{1cm}$f=\zeta_{k}f^{k}$.
 \end{center}
 Wówczas
-\begin{center}
-$l(x,y;f)=l(\xi^{i}e_{i},\eta^{j}e_{j};\zeta_{k}f^{k})=\xi^{i}\eta^{j}\zeta_{k}l(e_{i},e_{j};f^{k}).$
+\begin{center}$l(x,y;f)=l(\xi^{i}e_{i},\eta^{j}e_{j};\zeta_{k}f^{k})=\xi^{i}\eta^{j}\zeta_{k}l(e_{i},e_{j};f^{k}).$
 \end{center}
 
-\linespread{1.3}
-
-\indent
 Tak więc: przy ustalonych $\mathnormal{R}$ i odpowiednio w $\bar{R}$
-bazach $e_{1},e_{2},\ldots, e_{n}$ i $f^{1},f^{2},\ldots,f^{n}$\\
+bazach $e_{1},e_{2},\ldots, e_{n}$ i $f^{1},f^{2},\ldots,f^{n}$
 funkcję wieloliniową $l(x,y;f)$ zapisuje się w postaci
 \begin{center}
 $l(x,y;f)=a^{k}_{ij}\xi^{i}\eta^{j}\zeta_{k}$,
 \end{center}
-gdzie $\xi^{i}$ są to współrzędne wektora $x$, $\eta^{j}$ -- współrzędne wektora $y$, $\zeta_{k}$ -- współrzędne\\
-wektora $f$. Liczby $a^{k}_{ij}$ określające funkcję $l(x,y;f)$ wyznacza się ze wzoru\\
-\begin{center}
-$a^{k}_{ij}=l(e_{i},e_{j};f^{k})$.
+gdzie $\xi^{i}$ są to współrzędne wektora $x$, $\eta^{j}$ -- współrzędne wektora $y$, $\zeta_{k}$ -- współrzędne
+wektora $f$. Liczby $a^{k}_{ij}$ określające funkcję $l(x,y;f)$ wyznacza się ze wzoru
+\begin{center}$a^{k}_{ij}=l(e_{i},e_{j};f^{k})$.
 \end{center}
 Zależą one zatem od wyboru baz w $R$ i $\bar{R}$.
 
-\indent
-Algorytmiczny wzór mamy dla funkcji wielomianowej postaci
- 
-(1)
-\begin{center}
-$l(x,y,\ldots;f,g,\ldots)=a^{rs\ldots}_{ij\ldots}\xi^{i}\eta^{j}\ldots\lambda_{r}\mu_{s}\ldots$,
-\end{center}
+Analogiczny wzór mamy dla funkcji wielomianowej postaci
+\begin{equation}\ l(x,y,\ldots;f,g,\ldots)=a^{rs\ldots}_{ij\ldots}\xi^{i}\eta^{j}\ldots\lambda_{r}\mu_{s}\ldots\
+\end{equation}
 gdzie liczby $a^{rs\ldots}_{ij\ldots}$ określające funkcję wielomianową wyznacza się ze wzorów
+\begin{equation}\ a^{rs\ldots}_{ij\ldots}=l(e_{i},e_{j},\ldots;f^{r},f^{s},\ldots).\
+\end{equation}
 
-(2)
-\begin{center}
-$a^{rs\ldots}_{ij\ldots}=l(e_{i},e_{j},\ldots;f^{r},f^{s},\ldots)$.
-\end{center}
+Wyjaśnijmy teraz, jak zmienia się układ liczb określający formę wielomianową przy
+zmianie bazy.
 
-\indent
-Wyjaśnijmy teraz, jak zmienia się układ liczb określający formę wielomianową przy\\
-zmianie bazy.\\
-
-\indent
-Niech w $R$ dana będzie baza $e_{1},e_{2},\ldots, e_{n}$, a w $\bar{R}$ sprzężona z nią baza $f^{1},f^{2},\ldots,f^{n}$.\\
-Przejdziemy do nowej bazy $e'_{1},e'_{2},\ldots, e'_{n}$ w $R$ i sprzężonej z nią bazy $f'^{1},f'^{2},\ldots,f'^{n}$\\
+Niech w $R$ dana będzie baza $e_{1},e_{2},\ldots, e_{n}$, a w $\bar{R}$ sprzężona z nią baza $f^{1},f^{2},\ldots,f^{n}$.
+Przejdziemy do nowej bazy $e'_{1},e'_{2},\ldots, e'_{n}$ w $R$ i sprzężonej z nią bazy $f'^{1},f'^{2},\ldots,f'^{n}$
 w $\bar{R}$.
 
-(3)
-\begin{center}
-$e'_{\alpha}=c^{\beta}_{\alpha}e_{\beta}$.
-\end{center}
+Niech przejście od bazy $e_{1},e_{2},\ldots, e_{n}$ do bazy $e'_{1},e'_{2},\ldots, e'_{n}$ dane będzie wzorami
+\begin{equation}\ e'_{\alpha}=c^{\beta}_{\alpha}e_{\beta}.\
+\end{equation}
 Wówczas przejście od bazy $f^{1},f^{2},\ldots,f^{n}$ do bazy $f'^{1},f'^{2},\ldots,f'^{n}$ dane jest wzorami
-
-(4)
-\begin{center}
-$f'^{\beta}=b^{\beta}_{\alpha}f^{\alpha}$,
-\end{center}
+\begin{equation}\ f'^{\beta}=b^{\beta}_{\alpha}f^{\alpha},\
+\end{equation}
 gdzie[$b^{\beta}_{\alpha}$] jest macierzą transponowaną względem macierzy odwrotnej do [$c^{\beta}_{\alpha}$].
 
-\indent
 Wzór (3) pokazuje, że liczby $c^{\beta}_{\alpha}$ przy ustalonym $\alpha$ są wspórzędnymi wektora $e'_{\alpha}$ w bazie
 \newpage
 
 \begin{center}
 \footnotesize{ $\S$ 24. Tensory} 
 \end{center}
-\linespread{1.3}
-$e_{1},e_{2},\ldots, e_{n}$. Analogicznie liczby $b^{\beta}_{\alpha}$ przy ustalonym $\beta$ są współrzędnymi wektora $f'^{\beta}$\\
-w bazie $f^{1},f^{2},\ldots,f^{n}$.\\
-\indent
-Znajdziemy układ liczb $a'^{rs\ldots}_{ij\ldots}$ określających naszą funkcję wileokrotną w bazach\\
+$e_{1},e_{2},\ldots, e_{n}$. Analogicznie liczby $b^{\beta}_{\alpha}$ przy ustalonym $\beta$ są współrzędnymi wektora $f'^{\beta}$ w~bazie $f^{1},f^{2},\ldots,f^{n}$.
+
+Znajdziemy układ liczb $a'^{rs\ldots}_{ij\ldots}$ określających naszą funkcję wielo1liniową w bazach
 $e'_{1},e'_{2},\ldots, e'_{n}$ i $f'^{1},f'^{2},\ldots,f'^{n}$. Wiemy, że
 \begin{center}
 $a'^{rs\ldots}_{ij\ldots}=l(e'_{i},e'_{j},\ldots;f'^{r},f'^{s},\ldots)$.
 \end{center}
-A zatem, aby znaleźć $a'^{rs\ldots}_{ij\ldots}$ powinniśmy we wzorze (1) zamiast $\xi^{i}\eta^{j}\ldots\lambda_{r}\mu_{s}\ldots$ podstawić\\
-współrzędne wektorów $e'_{i},e'_{j},\ldots;f'^{r},f'^{s},\ldots$ th. liczby $c^{\alpha}_{i},c^{\beta}_{j},\ldots; b^{r}_{\sigma},b^{s}_{\tau}\ldots$. W ten sposób\\
-otrzymujemy
+A zatem, aby znaleźć $a'^{rs\ldots}_{ij\ldots}$ powinniśmy we wzorze (1) zamiast $\xi^{i},\eta^{j},\ldots\lambda_{r}\mu_{s}\ldots$ podstawić
+współrzędne wektorów $e'_{i},e'_{j},\ldots;f'^{r},f'^{s},\ldots$ tj. liczby $c^{\alpha}_{i},c^{\beta}_{j},\ldots; b^{r}_{\sigma},b^{s}_{\tau}\ldots$ W ten sposób otrzymujemy
 \begin{center}
 $a'^{rs\ldots}_{ij\ldots}=c^{\alpha}_{i}c^{\beta}_{j}\ldots b^{r}_{\sigma}b^{s}_{\tau}a^{\sigma\tau\ldots}_{\alpha\beta\ldots}$.
 \end{center}
 
-\indent
-Tak więc układy liczb $a^{rs\ldots}_{ij\ldots}$ określających funkcję wieloliniową $l(x,y,\dots;f,g,\dots)$ w\\
-bazach sprzężonych $e_{1},e_{2},\ldots, e_{n}$ i $f^{1},f^{2},\ldots,f^{n}$ przy przejściu do nowych baz sprzę-\\
-żonych $e'_{1},e'_{2},\ldots, e'_{n}$ i $f'^{1},f'^{2},\ldots,f'^{n}$ przekształcają się zgodnie ze wzorami\
+Tak więc układy liczb $a^{rs\ldots}_{ij\ldots}$ określających funkcję wieloliniową $l(x,y,\dots;f,g,\dots)$
+w~bazach sprzężonych $e_{1},e_{2},\ldots, e_{n}$ i $f^{1},f^{2},\ldots,f^{n}$ przy przejściu do nowych baz sprzężonych $e'_{1},e'_{2},\ldots, e'_{n}$ i $f'^{1},f'^{2},\ldots,f'^{n}$ przekształcają się zgodnie ze wzorami
+\begin{equation}\ a'^{rs\ldots}_{ij\ldots}=c^{\alpha}_{i}c^{\beta}_{j}\ldots b^{r}_{\sigma}b^{s}_{\tau}\ldots a^{\sigma\tau\ldots}_{\alpha\beta\ldots},\
+\end{equation}
+gdzie [$c^{j}_{i}$] jest to macierz określająca bazy $e_{1},e_{2},\ldots, e_{n}$, a [$b^{j}_{i}$] -- macierz
+określająca przekształcenie sprzężonej z nią bazy $f^{1},f^{2},\ldots,f^{n}$.
 
-(5)
-\begin{center}
-$a'^{rs\ldots}_{ij\ldots}=c^{\alpha}_{i}c^{\beta}_{j}\ldots b^{r}_{\sigma}b^{s}_{\tau}\ldots a^{\sigma\tau\ldots}_{\alpha\beta\ldots}$,
-\end{center}
-gdzie [$c^{j}_{i}$] jest to macierz określająca bazy $e_{1},e_{2},\ldots, e_{n}$, a [$b^{j}_{i}$] -- macierz\\
-określająca przekształcenie sprzężonej z nią bazy $f^{1},f^{2},\ldots,f^{n}$.\\
+Można to wyrazić w sposób następujący: na górze wskaźniki układu liczb $a^{rs\ldots}_{ij\ldots}$ działa
+macierz [$c^{j}_{i}$], a na dolne wskaźniki -- macierz [$b^{j}_{i}$] (porównaj $\S$ 22, ustęp 5, gdzie rozpatrzone
+są wzory na przekształcanie współrzędnych wektora kowariantego i wektora kontrawariantnego).\\
 
-\indent
-Można to wyrazić w sposób następujący: na górze wskaźniki układu liczb $a^{rs\ldots}_{ij\ldots}$ działa\\
-macierz [$c^{j}_{i}$], a na dolne wskaźniki -- macierz [$b^{j}_{i}$] (porównaj $\S$ 22, ustęp 5, gdzie rozpatrzone\\
-są wzory na przekształcanie współrzędnych wektora kowariantego i wektora kontra-\\
-wariantnego).\\
+\textbf{3. Określenie tensora.} Obiekty, z którymi spotkaliśmy się w tej książce (wektory,
+funkcje liniowe, przekształcenia liniowe, funkcje dwuliniowe itd.) określone były w każdej
+bazie przez odpowiedni układ liczb. Na przykład wektor określony był w każdej bazie przez
+układ $n$ liczb -- przez swoje współrzędne. Funkcja liniowa jest określona w każdej bazie
+także przez układ $n$ liczb -- przez swoje współczynniki. Przekształcenie liniowe jest określone w każdej bazie przez układ $n^{2}$ liczb -- przez macierz przekształcenia liniowego. Funkcja
+dwuliniowa jest określona w każdej bazie przez układ $n^{2}$ liczb -- przez macierz tej formy
+dwuliniowej. Przy przejściu od jednego układu współrzędnych (bazy) do drugiego układ
+liczb określający dany obiekt przekształca się w określony sposób przy czym reguła przekształcenia jest różna dla różnych obiektów. Na przykład zarówno wektor z $R$, jak i funkcja
+liniowa w $R$ są określone przez układ $n$ liczb, ale przy przejściu do innej bazy przekształcają się one różnie. Dla pełnego scharakteryzowania danej wielkości powinniśmy podać
+nie tylko wartości odpowiednich liczb w jakimś układzie współrzędnych, ale także regułę
+przekształcenia odpowiedniego zbioru liczb przy przechodzeniu do innego układu współrzędnych.
 
-\linespread{1.3}
-\indent
-\textbf{3. Określenie tensora.} Obiekty, z którymi spotkaliśmy się w tej książce (wektory,\\
-funkcje liniowe, przekształcenia liniowe, funkcje dwuliniowe itd.) określone były w każdej\\
-bazie przez odpowiedni układ liczb. Na przykład wektor określony był w każdej bazie przez\\
-układ $n$ liczb -- przez swoje współrzędne. Funkcja liniowa jest określona w każdej bazie\\
-także przez układ $n$ liczb -- przez swoje współczynniki. Przekształcenie liniowe jest okreś-\\
-lone w każdej bazie przez układ $n^{2}$ liczb -- przez macierz przekształcenia liniowego. Funkcja\\
-dwuliniowa jest określona w każdej bazie przez układ $n^{2}$ liczb -- przez macierz tej formy\\
-dwuliniowej. Przy przejściu od jednego układu współrzędnych (bazy) do drugiego układ\\
-liczb określający dany obiekt przekształca się w określony sposób przy czym reguła prze-\\
-kształcenia jest różna dla różnych obiektów. Na przykład zarówno wektor z $R$, jak i funkcja\\
-liniowa w $R$ są określone przez układ $n$ liczb, ale przy przejściu do innej bazy przekszatł-\\
-cają się one różnie. Dla pełnego scharakteryzowania danej wielkości powinniśmy podać\\
-nie tylko wartości odpowiednich liczb w jakimś układzie współrzędnych, ale także regułę\\
-przekształcenia odpowiedniego zbioru liczb przy przechodzeniu do innego układu współ-\\
-rzędnych.\\
-\indent
-W ustępach 1 i 2 tego paragrafu wprowadziliśmy pojęcie funkcji wieloliniowej, która\\
-określona jest w każdej bazie przez układ $n^{k}$ liczb (2), które przy przechodzeniu do innej\\
-bazy przekształcają się według wzorów (5). W związku z tym pojęciem wprowadza się\\
-następujące określenie ogólne, grające dużą rolę w licznych działach fizyki, geometrii\\
-i algebry.
+W ustępach 1 i 2 tego paragrafu wprowadziliśmy pojęcie funkcji wieloliniowej, która
+określona jest w każdej bazie przez układ $n^{k}$ liczb (2), które przy przechodzeniu do innej
+bazy przekształcają się według wzorów (5). W związku z tym pojęciem wprowadza się
+następujące określenie ogólne, grające dużą rolę w licznych działach fizyki, geometrii
+i~algebry.
 \end{document}
